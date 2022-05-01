@@ -1,0 +1,34 @@
+[
+    {
+        "id": 0,
+        "price": 20,
+        "picture": "https://cdn.britannica.com/56/199056-050-CCC44482/Jeff-Bezos-2017.jpg",
+        "name": "Jeff Bezos",
+        "comment" : "This cozy restaurant has left the best impressions! Hospitable hosts, delicious dishes, beautiful presentation, wide wine list and wonderful dessert. I recommend to everyone! I would like to come back here again and again.",
+        "rating": 4.5
+      },
+      {
+        "id": 1,
+        "price": 100,
+        "picture": "https://www.biography.com/.image/ar_1:1%2Cc_fill%2Ccs_srgb%2Cfl_progressive%2Cq_auto:good%2Cw_1200/MTc5OTk2ODUyMTMxNzM0ODcy/gettyimages-1229892983-square.jpg",
+        "name": "Elon Musk",
+        "comment" : "It’s a great experience. The ambiance is very welcoming and charming. Amazing wines, food and service. Staff are extremely knowledgeable and make great recommendations.",
+        "rating": 3.5
+      },
+      {
+        "id": 2,
+        "price": 120,
+        "picture": "https://cdn.britannica.com/47/188747-050-1D34E743/Bill-Gates-2011.jpg",
+        "name": "Bill Gates",
+        "comment" : "This place is great! Atmosphere is chill and cool but the staff is also really friendly. They know what they’re doing and what they’re talking about, and you can tell making the customers happy is their main priority. Food is pretty good, some italian classics and some twists, and for their prices it’s 100% worth it.",
+        "rating": 4.0
+      },
+      {
+        "id": 3,
+        "price": 120,
+        "picture": "https://cdn.britannica.com/47/188747-050-1D34E743/Bill-Gates-2011.jpg",
+        "name": "Bill Gates",
+        "comment" : "This place is great! Atmosphere is chill and cool but the staff is also really friendly. They know what they’re doing and what they’re talking about, and you can tell making the customers happy is their main priority. Food is pretty good, some italian classics and some twists, and for their prices it’s 100% worth it.",
+        "rating": 4.0
+      }
+]
