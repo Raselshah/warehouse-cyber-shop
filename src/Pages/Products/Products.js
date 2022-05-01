@@ -1,13 +1,9 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
+import AllData from "../../Hooks/AllData";
 import Product from "../Product/Product";
 
 const Products = () => {
-  const [products, setProducts] = useState([]);
-  useEffect(() => {
-    fetch("fakeData.json")
-      .then((res) => res.json())
-      .then((data) => setProducts(data));
-  }, []);
+  const [products] = AllData();
   return (
     <>
       <div className="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 mt-12 w-5/6 mx-auto gap-10">
