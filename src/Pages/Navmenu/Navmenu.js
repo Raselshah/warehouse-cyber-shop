@@ -8,7 +8,7 @@ const Navmenu = () => {
       className="flex justify-around items-center h-20"
     >
       <div className="logo-area">
-        <h2 className="text-white">Cyber Clinic</h2>
+        <h2 className="text-white text-3xl">Cyber Clinic</h2>
       </div>
       <div className="menu-area text-white">
         <Link className="px-5 text-lg" to="/home">
