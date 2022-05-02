@@ -15,7 +15,7 @@ const SignUp = () => {
         <SocialLogIn />
 
         <input
-          className="p-3 border-b-2 mb-2"
+          className="p-3 border-b-2 mb-2 "
           type="email"
           name="email"
           id=""
