@@ -11,7 +11,9 @@ const Products = () => {
           <Product key={product.id} product={product}></Product>
         ))}
       </div>
-      <button className="mx-auto w-full mt-12">VIEW MORE PRODUCTS</button>
+      <button className="mx-auto w-full mt-12 hover:text-red-600">
+        VIEW MORE PRODUCTS
+      </button>
     </>
   );
 };

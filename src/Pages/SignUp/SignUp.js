@@ -9,7 +9,7 @@ const SignUp = () => {
       <h2 className="text-slate-800 text-3xl mt-12 text-center">
         Cyber Clinic
       </h2>
-      <div className="logIn w-1/3 mx-auto flex flex-col bg-white p-12 mt-12">
+      <div className="logIn xs:w-5/6 md:w-5/6 lg:w-1/3 mx-auto flex flex-col bg-white p-12 mt-12">
         <h2 className="text-center m-4 text-2xl">Sign up for free!</h2>
 
         <SocialLogIn />

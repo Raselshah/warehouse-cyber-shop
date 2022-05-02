@@ -14,31 +14,31 @@ const HighLight = () => {
               src="http://images.vinovathemes.com/prestashop_warehouse/html-image-cat1.jpg"
               alt=""
             />
-            <h4>Air Conditioner</h4>
+            <small>Air Conditioner</small>
           </div>
 
           <div className="product-card">
             <img
-              src="http://images.vinovathemes.com/prestashop_warehouse/html-image-cat1.jpg"
+              src="http://images.vinovathemes.com/prestashop_warehouse/html-image-cat2.jpg"
               alt=""
             />
-            <h4>Air Conditioner</h4>
+            <small>Microwave</small>
           </div>
 
           <div className="product-card">
             <img
-              src="http://images.vinovathemes.com/prestashop_warehouse/html-image-cat1.jpg"
+              src="http://images.vinovathemes.com/prestashop_warehouse/html-image-cat3.jpg"
               alt=""
             />
-            <h4>Air Conditioner</h4>
+            <small>Washing Machine</small>
           </div>
 
           <div className="product-card">
             <img
-              src="http://images.vinovathemes.com/prestashop_warehouse/html-image-cat1.jpg"
+              src="http://images.vinovathemes.com/prestashop_warehouse/html-image-cat4.jpg"
               alt=""
             />
-            <h4>Air Conditioner</h4>
+            <small>Blender</small>
           </div>
         </div>
       </div>
@@ -50,26 +50,26 @@ const HighLight = () => {
         <div className="products-cards grid grid-cols-2 p-2 justify-center gap-4">
           <div className="product-card">
             <img
-              src="http://images.vinovathemes.com/prestashop_warehouse/html-image-cat1.jpg"
+              src="http://images.vinovathemes.com/prestashop_warehouse/html-image-cat5.jpg"
               alt=""
             />
-            <h4>Air Conditioner</h4>
+            <small>Laptop</small>
           </div>
 
           <div className="product-card">
             <img
-              src="http://images.vinovathemes.com/prestashop_warehouse/html-image-cat1.jpg"
+              src="http://images.vinovathemes.com/prestashop_warehouse/html-image-cat6.jpg"
               alt=""
             />
-            <h4>Air Conditioner</h4>
+            <small>Mouse</small>
           </div>
 
           <div className="product-card">
             <img
-              src="http://images.vinovathemes.com/prestashop_warehouse/html-image-cat1.jpg"
+              src="http://images.vinovathemes.com/prestashop_warehouse/html-image-cat7.jpg"
               alt=""
             />
-            <h4>Air Conditioner</h4>
+            <h4>Monitor</h4>
           </div>
 
           <div className="product-card">
@@ -89,34 +89,34 @@ const HighLight = () => {
         <div className="products-cards grid grid-cols-2 p-2 justify-center gap-4">
           <div className="product-card">
             <img
-              src="http://images.vinovathemes.com/prestashop_warehouse/html-image-cat1.jpg"
+              src="http://images.vinovathemes.com/prestashop_warehouse/html-image-cat8.jpg"
               alt=""
             />
-            <h4>Air Conditioner</h4>
+            <small>Headphone</small>
           </div>
 
           <div className="product-card">
             <img
-              src="http://images.vinovathemes.com/prestashop_warehouse/html-image-cat1.jpg"
+              src="http://images.vinovathemes.com/prestashop_warehouse/html-image-cat9.jpg"
               alt=""
             />
-            <h4>Air Conditioner</h4>
+            <small>Speaker</small>
           </div>
 
           <div className="product-card">
             <img
-              src="http://images.vinovathemes.com/prestashop_warehouse/html-image-cat1.jpg"
+              src="http://images.vinovathemes.com/prestashop_warehouse/html-image-cat10.jpg"
               alt=""
             />
-            <h4>Air Conditioner</h4>
+            <small>Portable Speaker</small>
           </div>
 
           <div className="product-card">
             <img
-              src="http://images.vinovathemes.com/prestashop_warehouse/html-image-cat1.jpg"
+              src="http://images.vinovathemes.com/prestashop_warehouse/html-image-cat11.jpg"
               alt=""
             />
-            <h4>Air Conditioner</h4>
+            <small>Smart Speaker</small>
           </div>
         </div>
       </div>

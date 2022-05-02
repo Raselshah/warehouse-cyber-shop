@@ -10,7 +10,7 @@ import { BsInstagram } from "react-icons/bs";
 const Footer = () => {
   return (
     <div style={{ background: "#0d1c2f" }} className="pb-6">
-      <div className="grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 max-w-screen-lg mx-auto mt-16">
+      <div className="grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 lg:max-w-screen-lg md:w-5/6 sm:w-5/6 mx-auto mt-16">
         <div className="section-one mt-8">
           <div className="flex items-center justify-start text-white py-4">
             <h1 className="text-5xl">
