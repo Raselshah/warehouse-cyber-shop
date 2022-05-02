@@ -4,7 +4,7 @@ const InventoryItem = ({ product }) => {
   const { price, picture, name, comment } = product;
   return (
     <>
-      <tr className="border">
+      <tr className="border bg-slate-50">
         <td className="px-4">{name}</td>
         <td className="px-4 w-2/5">{comment}</td>
         <td className="px-4">${price}</td>
