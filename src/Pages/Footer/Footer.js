@@ -1,29 +1,42 @@
 import React from "react";
+import { FaUser } from "react-icons/fa";
+import { GoLocation } from "react-icons/go";
+import { GoMailRead } from "react-icons/go";
+import { FaFacebookF } from "react-icons/fa";
+import { TiSocialGooglePlus } from "react-icons/ti";
+import { BsTwitter } from "react-icons/bs";
+import { BsInstagram } from "react-icons/bs";
 
 const Footer = () => {
   return (
-    <div style={{ background: "#0d1c2f" }} className="div">
+    <div style={{ background: "#0d1c2f" }} className="pb-6">
       <div className="grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 max-w-screen-lg mx-auto mt-16">
         <div className="section-one mt-8">
           <div className="flex items-center justify-start text-white py-4">
-            <h1 className="px-2">jh</h1>
-            <div className="">
+            <h1 className="text-5xl">
+              <FaUser />
+            </h1>
+            <div className="px-3">
               <small>Call Customer Services, We Support 24/7 </small>
               <p className="text-sm">800-140-10000</p>
             </div>
           </div>
 
           <div className="flex items-center justify-start text-white py-4">
-            <h1 className="px-2">jh</h1>
-            <div className="">
+            <h1 className="text-5xl">
+              <GoLocation />
+            </h1>
+            <div className="px-3">
               <small>Address :</small>
               <p className="text-sm">North Americas Avenue, El Paso, Texas</p>
             </div>
           </div>
 
           <div className="flex items-center justify-start text-white py-4">
-            <h1 className="px-2">jh</h1>
-            <div className="">
+            <h1 className="text-5xl">
+              <GoMailRead />
+            </h1>
+            <div className="px-3">
               <small>Email :</small>
               <p className="text-sm">Support@developer.com</p>
             </div>
@@ -53,11 +66,29 @@ const Footer = () => {
               SUBSCRIBE
             </button>
           </div>
+          <div className="flex mt-6 gap-4 text-3xl">
+            <small>
+              <FaFacebookF />
+            </small>
+            <small>
+              <TiSocialGooglePlus />
+            </small>
+            <small>
+              <BsTwitter />
+            </small>
+            <small>
+              <BsInstagram />
+            </small>
+          </div>
         </div>
       </div>
       <div style={{ height: "1px" }} className="bg-gray-300 w-full mt-6"></div>
-      <div className="max-w-screen-lg mx-auto text-white mt-6">
+      <div className="max-w-screen-lg mx-auto flex justify-between text-white mt-6">
         <small>Copyright © 2021 MRS. All rights reserved.</small>
+        <img
+          src="http://images.vinovathemes.com/prestashop_anico/payment.png"
+          alt=""
+        />
       </div>
     </div>
   );
