@@ -8,13 +8,25 @@ const SignUp = () => {
   const [createUserWithEmailAndPassword, user, loading, error] =
     useCreateUserWithEmailAndPassword(auth);
   const navigate = useNavigate();
-  const [userInfo, setUserInfo] = useState({
-    email: "",
-    password: "",
-  });
+  // const [userInfo, setUserInfo] = useState({
+  //   email: "",
+  //   password: "",
+  // });
+  const [email, setEmail] = useState({});
+  const [password, setPassword] = useState({});
 
+  const handleEmailBtn = (event) => {
+    const email = event.target.value;
+    setEmail(email);
+  };
+  const handlePasswordBtn = (event) => {
+    const password = event.target.value;
+    setPassword(password);
+  };
+  console.log(email, password);
   const handleEmailPassSubmit = (event) => {
     event.preventDefault();
+    createUserWithEmailAndPassword(email, password);
   };
 
   return (
@@ -27,8 +39,9 @@ const SignUp = () => {
 
         <SocialLogIn />
 
-        <form>
+        <form onSubmit={handleEmailPassSubmit}>
           <input
+            onBlur={handleEmailBtn}
             className="p-3 border-b-2 mb-2 w-full"
             type="email"
             name="email"
@@ -45,6 +58,7 @@ const SignUp = () => {
             required
           />
           <input
+            onChange={handlePasswordBtn}
             className="p-3 border-b-2 mb-2 w-full"
             type="password"
             name="password"
