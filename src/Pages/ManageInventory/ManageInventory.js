@@ -1,12 +1,17 @@
-import React from "react";
-import AllData from "../../Hooks/AllData";
+import React, { useEffect, useState } from "react";
 import InventoryItem from "../InventoryItem/InventoryItem";
 
 const ManageInventory = () => {
-  const [products] = AllData();
+  // const [products] = AllData();
+  const [products, setProducts] = useState([]);
+  useEffect(() => {
+    fetch("http://localhost:5000/home")
+      .then((res) => res.json())
+      .then((data) => setProducts(data));
+  }, []);
   return (
     <div className="max-w-screen-lg mt-12 mx-auto flex">
-      <table>
+      <table className=" md:w-full mx-auto">
         <tr className="border bg-slate-200">
           <th>Product</th>
           <th>Category</th>
@@ -17,7 +22,7 @@ const ManageInventory = () => {
         </tr>
 
         {products.map((product) => (
-          <InventoryItem key={product.id} product={product}></InventoryItem>
+          <InventoryItem key={product._id} product={product}></InventoryItem>
         ))}
       </table>
     </div>
