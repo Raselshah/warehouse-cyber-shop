@@ -8,6 +8,7 @@ import LogIn from "./Pages/LogIn/LogIn";
 import ManageInventory from "./Pages/ManageInventory/ManageInventory";
 import Navmenu from "./Pages/Navmenu/Navmenu";
 import SignUp from "./Pages/SignUp/SignUp";
+import SingleProduct from "./Pages/SingleProduct/SingleProduct";
 
 function App() {
   return (
@@ -17,10 +18,18 @@ function App() {
         <Route path="/" element={<HomePage />} />
         <Route path="/home" element={<HomePage />} />
         <Route
-          path="/manage"
+          path="/inventory"
           element={
             <RequireAuth>
               <ManageInventory />
+            </RequireAuth>
+          }
+        />
+        <Route
+          path="/inventory/:id"
+          element={
+            <RequireAuth>
+              <SingleProduct />
             </RequireAuth>
           }
         />

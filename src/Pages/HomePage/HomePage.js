@@ -14,7 +14,7 @@ const HomePage = () => {
 
       <button
         className="mx-auto w-full mt-12 hover:text-red-600"
-        onClick={() => navigate("/manage")}
+        onClick={() => navigate("/inventory")}
       >
         MANAGE ITEMS
       </button>

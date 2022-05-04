@@ -1,12 +1,26 @@
 import React from "react";
+import { useSignInWithGoogle } from "react-firebase-hooks/auth";
 import { AiFillGoogleCircle } from "react-icons/ai";
 import { BsGithub } from "react-icons/bs";
+import { useNavigate } from "react-router-dom";
+import auth from "../../firebase.init";
 
 const SocialLogIn = () => {
+  const [signInWithGoogle, googleUser, loading, error] =
+    useSignInWithGoogle(auth);
+
+  const navigate = useNavigate();
+  if (googleUser) {
+    navigate("/");
+  }
+
   return (
     <>
       <div className="flex justify-around gap-4 mt-6">
-        <button className="bg-red-600 w-full flex justify-center items-center text-white text-lg py-2 rounded">
+        <button
+          onClick={() => signInWithGoogle()}
+          className="bg-red-600 w-full flex justify-center items-center text-white text-lg py-2 rounded"
+        >
           <small className="text-xl mx-2">
             <AiFillGoogleCircle />
           </small>

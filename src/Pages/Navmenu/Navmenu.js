@@ -6,7 +6,6 @@ import auth from "../../firebase.init";
 
 const Navmenu = () => {
   const [user] = useAuthState(auth);
-  console.log(user);
   const handleLogOut = () => {
     signOut(auth);
   };
@@ -25,7 +24,7 @@ const Navmenu = () => {
 
         {user ? (
           <>
-            <Link className="px-5 text-lg" to="/manage">
+            <Link className="px-5 text-lg" to="/inventory">
               Manage Items
             </Link>
             <Link className="px-5 text-lg" to="/add">

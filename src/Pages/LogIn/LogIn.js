@@ -34,7 +34,7 @@ const LogIn = () => {
 
   return (
     <div className="mb-6">
-      <h2 className="text-blue-200 text-3xl mt-12 text-center">Cyber Clinic</h2>
+      <h2 className="text-3xl mt-12 text-center">Cyber Clinic</h2>
       <div className="logIn xs:w-5/6 md:w-5/6 lg:w-1/3 mx-auto flex flex-col bg-white p-12 mt-12">
         <h2 className="text-center m-2 text-2xl">Login to your account</h2>
         <p className="text-center mb-4">
