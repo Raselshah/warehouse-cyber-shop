@@ -7,18 +7,22 @@ import Products from "../Products/Products";
 const HomePage = () => {
   const navigate = useNavigate();
   return (
-    <div className="max-w-screen-xl mx-auto">
-      <Banner />
-      <HighLight />
-      <Products />
+    <>
+      <div className="max-w-screen-xl mx-auto">
+        <Banner />
+        <HighLight />
+        <Products />
+      </div>
 
       <button
-        className="mx-auto w-full mt-12 hover:text-red-600"
+        className="flex justify-center w-60 mx-auto px-12 py-2 mt-12 hover:bg-sky-700 hover:text-white text-gray-300 bg-white"
         onClick={() => navigate("/inventory")}
       >
         MANAGE ITEMS
       </button>
-    </div>
+
+      
+    </>
   );
 };
 

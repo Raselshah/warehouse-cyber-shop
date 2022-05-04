@@ -7,6 +7,7 @@ import HomePage from "./Pages/HomePage/HomePage";
 import LogIn from "./Pages/LogIn/LogIn";
 import ManageInventory from "./Pages/ManageInventory/ManageInventory";
 import Navmenu from "./Pages/Navmenu/Navmenu";
+import NotAPage from "./Pages/NotAPage/NotAPage";
 import SignUp from "./Pages/SignUp/SignUp";
 import SingleProduct from "./Pages/SingleProduct/SingleProduct";
 
@@ -36,6 +37,7 @@ function App() {
         <Route path="/add" element={<AddNewItems />} />
         <Route path="/login" element={<LogIn />} />
         <Route path="/signup" element={<SignUp />} />
+        <Route path="*" element={<NotAPage />} />
       </Routes>
 
       <Footer />

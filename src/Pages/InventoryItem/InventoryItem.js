@@ -1,4 +1,6 @@
 import React from "react";
+import { TiDeleteOutline } from "react-icons/ti";
+import { MdUpdate } from "react-icons/md";
 
 const InventoryItem = ({ product }) => {
   const { price, picture, supplierName, description, quantity, category } =
@@ -15,7 +17,16 @@ const InventoryItem = ({ product }) => {
         <td className="px-4 text-gray-600">{supplierName}</td>
         <td className="px-4">{quantity}</td>
         <td className="px-4">
-          <button>update</button>
+          <button className="mx-2">
+            <p title="update" className="text-3xl">
+              <MdUpdate />
+            </p>
+          </button>
+          <button>
+            <p title="Delete" className=" text-3xl">
+              <TiDeleteOutline />
+            </p>
+          </button>
         </td>
       </tr>
     </>
