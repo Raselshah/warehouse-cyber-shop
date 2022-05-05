@@ -2,7 +2,8 @@ import React from "react";
 
 const AddNewItems = () => {
   return (
-    <div>
+    <div className="text-center mt-12">
+      <h2>Please enter your new products</h2>
       <form className="flex flex-col w-4/6 mx-auto gap-4 p-2 mt-12">
         <input type="text" name="sname" id="" placeholder="Supplier name" />
         <input type="text" name="pname" id="" placeholder="product name" />
