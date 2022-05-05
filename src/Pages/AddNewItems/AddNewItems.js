@@ -1,7 +1,10 @@
 import React from "react";
+import { useAuthState } from "react-firebase-hooks/auth";
 import { useForm } from "react-hook-form";
+import auth from "../../firebase.init";
 
 const AddNewItems = () => {
+  const [user] = useAuthState(auth);
   const { register, handleSubmit } = useForm();
   const onSubmit = (data) => {
     console.log(data);
@@ -59,6 +62,12 @@ const AddNewItems = () => {
           type="number"
           {...register("quantity")}
         />
+        {/* <input
+          className="flex flex-col mb-2 p-2 lg:w-1/3 mx-auto border-b-2 md:w-5/6"
+          placeholder="Email"
+          type="email"
+          {...register("Email")}
+        /> */}
         <input
           className="mt-2 bg-sky-600 hover:bg-sky-700 hover:text-white w-40 py-2 cursor-pointer rounded"
           value="SAVE DATA"

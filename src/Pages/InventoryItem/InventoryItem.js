@@ -2,9 +2,10 @@ import React from "react";
 import { TiDeleteOutline } from "react-icons/ti";
 import { MdUpdate } from "react-icons/md";
 
-const InventoryItem = ({ product }) => {
-  const { price, picture, supplierName, description, quantity, category } =
+const InventoryItem = ({ product, handleProductDelete }) => {
+  const { _id, price, picture, supplierName, description, quantity, category } =
     product;
+
   return (
     <>
       <tr className="border bg-slate-50 text-center">
@@ -22,7 +23,7 @@ const InventoryItem = ({ product }) => {
               <MdUpdate />
             </p>
           </button>
-          <button>
+          <button onClick={() => handleProductDelete(_id)}>
             <p title="Delete" className=" text-3xl">
               <TiDeleteOutline />
             </p>
