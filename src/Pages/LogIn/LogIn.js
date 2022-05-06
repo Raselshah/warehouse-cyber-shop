@@ -1,12 +1,18 @@
 import React, { useState } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import SocialLogIn from "../../Hooks/SocialLogIn/SocialLogIn";
-import { useSignInWithEmailAndPassword } from "react-firebase-hooks/auth";
+import {
+  useSignInWithEmailAndPassword,
+  useSendPasswordResetEmail,
+} from "react-firebase-hooks/auth";
 import auth from "../../firebase.init";
 
 const LogIn = () => {
   const [signInWithEmailAndPassword, user, loading, error] =
     useSignInWithEmailAndPassword(auth);
+
+  const [sendPasswordResetEmail, sending, resetError] =
+    useSendPasswordResetEmail(auth);
   const navigate = useNavigate();
 
   const location = useLocation();
@@ -71,12 +77,15 @@ const LogIn = () => {
             required
           />
 
-          <Link
-            className="justify-end flex m-4  text-blue-400 underline"
-            to="/"
+          <button
+            onClick={async () => {
+              await sendPasswordResetEmail(email);
+              alert("Sent email");
+            }}
+            className="flex justify-end m-4 text-blue-400 underline"
           >
             Forgot password?
-          </Link>
+          </button>
           <button
             onClick={handleLogInButton}
             className="bg-blue-400 py-3 flex w-full justify-center mt-4 text-lg hover:bg-blue-500 text-white rounded"
