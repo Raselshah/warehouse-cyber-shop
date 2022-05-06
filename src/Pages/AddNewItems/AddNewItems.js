@@ -6,9 +6,8 @@ import auth from "../../firebase.init";
 const AddNewItems = () => {
   const [user] = useAuthState(auth);
   const { register, handleSubmit } = useForm();
-  const onSubmit = (data) => {
-    console.log(data);
-    const url = `http://localhost:5000/home`;
+  const onSubmit = (data, event) => {
+    const url = `http://localhost:5000/add`;
     fetch(url, {
       method: "POST",
       headers: {
@@ -19,6 +18,9 @@ const AddNewItems = () => {
       .then((res) => res.json())
       .then((product) => {
         console.log(product);
+        if (product) {
+          event.target.reset();
+        }
       });
   };
   return (
@@ -33,7 +35,7 @@ const AddNewItems = () => {
         <input
           className="flex flex-col mb-2 p-2 lg:w-1/3 mx-auto border-b-2 md:w-5/6"
           placeholder="Product Name"
-          {...register("productName")}
+          {...register("productName", { required: true, maxLength: 20 })}
         />
         <textarea
           className="flex flex-col mb-2 p-2 lg:w-1/3 mx-auto border-b-2 md:w-5/6"
@@ -62,12 +64,12 @@ const AddNewItems = () => {
           type="number"
           {...register("quantity")}
         />
-        {/* <input
+        <input
           className="flex flex-col mb-2 p-2 lg:w-1/3 mx-auto border-b-2 md:w-5/6"
-          placeholder="Email"
-          type="email"
-          {...register("Email")}
-        /> */}
+          readOnly
+          value={user?.email}
+          {...register("email")}
+        />
         <input
           className="mt-2 bg-sky-600 hover:bg-sky-700 hover:text-white w-40 py-2 cursor-pointer rounded"
           value="SAVE DATA"

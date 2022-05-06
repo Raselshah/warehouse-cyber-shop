@@ -30,7 +30,7 @@ const Navmenu = () => {
             <Link className="px-5 text-lg" to="/add">
               Add Item
             </Link>
-            <Link className="px-5 text-lg" to="/items">
+            <Link className="px-5 text-lg" to="/item">
               My items
             </Link>
           </>

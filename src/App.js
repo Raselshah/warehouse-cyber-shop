@@ -2,6 +2,7 @@ import { Route, Routes } from "react-router-dom";
 import "./App.css";
 import RequireAuth from "./Hooks/RequireAuth/RequireAuth";
 import AddNewItems from "./Pages/AddNewItems/AddNewItems";
+import FindMyItems from "./Pages/FindMyItems/FindMyItems";
 import Footer from "./Pages/Footer/Footer";
 import HomePage from "./Pages/HomePage/HomePage";
 import LogIn from "./Pages/LogIn/LogIn";
@@ -35,6 +36,7 @@ function App() {
           }
         />
         <Route path="/add" element={<AddNewItems />} />
+        <Route path="/item" element={<FindMyItems />} />
         <Route path="/login" element={<LogIn />} />
         <Route path="/signup" element={<SignUp />} />
         <Route path="*" element={<NotAPage />} />
