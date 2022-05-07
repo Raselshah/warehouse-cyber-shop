@@ -3,6 +3,7 @@ import { useNavigate } from "react-router-dom";
 import Banner from "../Banner/Banner";
 import HighLight from "../HighLight/HighLight";
 import Products from "../Products/Products";
+import SearchByItem from "../SearchByItem/SearchByItem";
 
 const HomePage = () => {
   const navigate = useNavigate();
@@ -12,6 +13,7 @@ const HomePage = () => {
         <Banner />
         <HighLight />
         <Products />
+        <SearchByItem />
       </div>
 
       <button
@@ -20,8 +22,6 @@ const HomePage = () => {
       >
         MANAGE ITEMS
       </button>
-
-      
     </>
   );
 };

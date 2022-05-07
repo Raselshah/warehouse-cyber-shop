@@ -10,4 +10,8 @@
 
 ### 5. inserting client-side data to post backend site
 
+## the technology use this project
+
+### JSX,JS,tailwind,firebase,ReactJS,NodeJS,MongoDB,heroku server,toastify or other technology
+
 ### Live Site Link
