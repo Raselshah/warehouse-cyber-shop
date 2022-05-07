@@ -16,7 +16,7 @@ const SingleProduct = () => {
     price,
   } = product;
 
-  const url = `http://localhost:5000/inventory/${id}`;
+  const url = `https://warm-journey-95440.herokuapp.com/inventory/${id}`;
   const handleQuantity = (id) => {
     let q = quantity - 1;
     const newProduct = { ...product, quantity: q };

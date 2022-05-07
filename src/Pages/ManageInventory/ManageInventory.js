@@ -5,7 +5,7 @@ import InventoryItem from "../InventoryItem/InventoryItem";
 const ManageInventory = () => {
   const [products, setProducts] = useState([]);
   useEffect(() => {
-    fetch("http://localhost:5000/home")
+    fetch("https://warm-journey-95440.herokuapp.com/home")
       .then((res) => res.json())
       .then((data) => setProducts(data));
   }, []);
@@ -15,7 +15,7 @@ const ManageInventory = () => {
   const handleProductDelete = (id) => {
     const confirmUser = window.confirm("Delete this item are you sure?");
     if (confirmUser) {
-      const url = `http://localhost:5000/inventory/${id}`;
+      const url = `https://warm-journey-95440.herokuapp.com/inventory/${id}`;
       fetch(url, {
         method: "DELETE",
       })

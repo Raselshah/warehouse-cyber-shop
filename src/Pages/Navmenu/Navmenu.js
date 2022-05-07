@@ -5,7 +5,6 @@ import { AiOutlineMenu } from "react-icons/ai";
 import { ImCross } from "react-icons/im";
 import auth from "../../firebase.init";
 import CustomLink from "../../Hooks/CustomLink/CustomLink";
-import "./Navmenu.css";
 
 const Navmenu = () => {
   const [user] = useAuthState(auth);

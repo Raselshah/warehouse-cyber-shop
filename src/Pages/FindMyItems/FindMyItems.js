@@ -12,7 +12,7 @@ const FindMyItems = () => {
   useEffect(() => {
     const getProducts = async () => {
       const email = user?.email;
-      const url = `http://localhost:5000/item?email=${email}`;
+      const url = `https://warm-journey-95440.herokuapp.com/item?email=${email}`;
       fetch(url)
         .then((res) => res.json())
         .then((data) => {
@@ -25,7 +25,7 @@ const FindMyItems = () => {
   const handleProductDelete = (id) => {
     const confirmUser = window.confirm("Delete this item are you sure?");
     if (confirmUser) {
-      const url = `http://localhost:5000/inventory/${id}`;
+      const url = `https://warm-journey-95440.herokuapp.com/inventory/${id}`;
       fetch(url, {
         method: "DELETE",
       })

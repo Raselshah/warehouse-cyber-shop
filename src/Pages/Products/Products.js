@@ -5,7 +5,7 @@ const Products = () => {
   // const [products] = AllData();
   const [products, setProducts] = useState([]);
   useEffect(() => {
-    fetch("http://localhost:5000/home")
+    fetch("https://warm-journey-95440.herokuapp.com/home")
       .then((res) => res.json())
       .then((data) => setProducts(data));
   }, []);

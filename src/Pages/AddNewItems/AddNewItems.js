@@ -9,7 +9,7 @@ const AddNewItems = () => {
   const [user] = useAuthState(auth);
   const { register, handleSubmit } = useForm();
   const onSubmit = (data, event) => {
-    const url = `http://localhost:5000/add`;
+    const url = `https://warm-journey-95440.herokuapp.com/add`;
     fetch(url, {
       method: "POST",
       headers: {
