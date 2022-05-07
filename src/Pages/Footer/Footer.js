@@ -10,7 +10,7 @@ import { BsInstagram } from "react-icons/bs";
 const Footer = () => {
   return (
     <div style={{ background: "#0d1c2f" }} className="pb-6">
-      <div className="grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 lg:max-w-screen-lg md:w-5/6 sm:w-5/6 mx-auto mt-16">
+      <div className="grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 lg:max-w-screen-lg w-5/6 mx-auto mt-16">
         <div className="section-one mt-8">
           <div className="flex items-center justify-start text-white py-4">
             <h1 className="text-5xl">
@@ -83,8 +83,10 @@ const Footer = () => {
         </div>
       </div>
       <div style={{ height: "1px" }} className="bg-gray-300 w-full mt-6"></div>
-      <div className="max-w-screen-lg mx-auto flex justify-between text-white mt-6">
-        <small>Copyright © 2021 MRS. All rights reserved.</small>
+      <div className="lg:max-w-screen-lg w-5/6  mx-auto flex-col flex sm:flex-row justify-between text-white mt-6">
+        <small className="py-2">
+          Copyright © 2021 MRS. All rights reserved.
+        </small>
         <img
           src="http://images.vinovathemes.com/prestashop_anico/payment.png"
           alt=""

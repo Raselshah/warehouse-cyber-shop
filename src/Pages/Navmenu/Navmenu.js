@@ -1,53 +1,73 @@
 import { signOut } from "firebase/auth";
-import React from "react";
+import React, { useState } from "react";
 import { useAuthState } from "react-firebase-hooks/auth";
-import { Link } from "react-router-dom";
+import { AiOutlineMenu } from "react-icons/ai";
+import { ImCross } from "react-icons/im";
 import auth from "../../firebase.init";
+import CustomLink from "../../Hooks/CustomLink/CustomLink";
+import "./Navmenu.css";
 
 const Navmenu = () => {
   const [user] = useAuthState(auth);
   const handleLogOut = () => {
     signOut(auth);
   };
+
+  const [openMenu, setOpenMenu] = useState(false);
   return (
     <div
       style={{ background: "rgb(0, 50, 101)" }}
       className="flex justify-around items-center h-20"
     >
-      <div className="logo-area">
-        <h2 className="text-white text-3xl">Cyber Clinic</h2>
-      </div>
-      <div className="menu-area text-white">
-        <Link className="px-5 text-lg" to="/home">
+      <h2 className="text-white text-3xl">Cyber Clinic</h2>
+      <div
+        className={`lg:flex block lg:static absolute duration-500 ease-in-out ${
+          openMenu ? "top-16 w-full text-center bg-sky-500 p-3" : "top-[-200px]"
+        }`}
+      >
+        <CustomLink className="px-5 text-lg" to="/home">
           Home
-        </Link>
+        </CustomLink>
+        <CustomLink className="px-5 text-lg" to="/blog">
+          Blogs
+        </CustomLink>
 
         {user ? (
           <>
-            <Link className="px-5 text-lg" to="/inventory">
+            <CustomLink className="px-5 text-lg" to="/inventory">
               Manage Items
-            </Link>
-            <Link className="px-5 text-lg" to="/add">
+            </CustomLink>
+            <CustomLink className="px-5 text-lg" to="/add">
               Add Item
-            </Link>
-            <Link className="px-5 text-lg" to="/item">
+            </CustomLink>
+            <CustomLink className="px-5 text-lg" to="/item">
               My items
-            </Link>
+            </CustomLink>
           </>
         ) : (
           ""
         )}
 
         {user ? (
-          <Link onClick={handleLogOut} className="px-5 text-lg" to="/login">
+          <CustomLink
+            onClick={handleLogOut}
+            className="px-5 text-lg"
+            to="/login"
+          >
             Log Out
-          </Link>
+          </CustomLink>
         ) : (
-          <Link className="px-5 text-lg" to="/login">
+          <CustomLink className="px-5 text-lg" to="/login">
             Log In
-          </Link>
+          </CustomLink>
         )}
       </div>
+      <button
+        onClick={() => setOpenMenu(!openMenu)}
+        className="text-white text-2xl block lg:hidden"
+      >
+        {openMenu ? <ImCross /> : <AiOutlineMenu />}
+      </button>
     </div>
   );
 };
