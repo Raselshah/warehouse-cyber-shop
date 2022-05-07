@@ -1,20 +1,46 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import SocialLogIn from "../../Hooks/SocialLogIn/SocialLogIn";
 import { useCreateUserWithEmailAndPassword } from "react-firebase-hooks/auth";
 import auth from "../../firebase.init";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const SignUp = () => {
   const [createUserWithEmailAndPassword, user, loading, error] =
     useCreateUserWithEmailAndPassword(auth, { sendEmailVerification: true });
   const navigate = useNavigate();
-  // const [userInfo, setUserInfo] = useState({
-  //   email: "",
-  //   password: "",
-  // });
+
   const [email, setEmail] = useState({});
   const [password, setPassword] = useState({});
 
+  useEffect(() => {
+    if (user) {
+      toast("Successfully Signup", {
+        position: "top-center",
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+      });
+    }
+  }, [user]);
+
+  useEffect(() => {
+    if (error) {
+      toast("opps! invalid email or password", {
+        position: "top-center",
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+      });
+    }
+  }, [error]);
   const handleEmailBtn = (event) => {
     const email = event.target.value;
     setEmail(email);
@@ -23,7 +49,6 @@ const SignUp = () => {
     const password = event.target.value;
     setPassword(password);
   };
-  console.log(email, password);
   const handleEmailPassSubmit = (event) => {
     event.preventDefault();
     createUserWithEmailAndPassword(email, password);
@@ -81,6 +106,7 @@ const SignUp = () => {
           Already have an account?
         </button>
       </div>
+      <ToastContainer />
     </div>
   );
 };

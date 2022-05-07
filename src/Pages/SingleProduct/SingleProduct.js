@@ -42,8 +42,10 @@ const SingleProduct = () => {
   const handleInsert = (event) => {
     const q = event.target.value;
     setInsertData(q);
+    event.target.reset();
   };
-  const updateQuantity = () => {
+  const updateQuantity = (event) => {
+    event.preventDefault();
     let q = parseInt(quantity) + parseInt(insertData);
     const newProduct = { ...product, quantity: q };
     setProduct(newProduct);
@@ -59,22 +61,27 @@ const SingleProduct = () => {
   };
   return (
     <>
-      <div className="mx-auto flex flex-col">
-        <input
-          onBlur={handleInsert}
-          className="mt-12 mx-auto p-2 border-b-2"
-          type="number"
-          name="insert"
-          id=""
-          placeholder="Quantity added"
-        />
+      <div className="">
+        <form
+          className="mx-auto w-full flex flex-col justify-center"
+          onSubmit={updateQuantity}
+        >
+          <input
+            onBlur={handleInsert}
+            className="mt-12 mx-auto p-2 border-b-2"
+            type="number"
+            name="insert"
+            id=""
+            placeholder="Quantity added"
+          />
 
-        <input
-          onClick={updateQuantity}
-          className="bg-sky-600 hover:bg-sky-700 hover:text-white w-44 mx-auto p-2 mt-2 cursor-pointer"
-          type="submit"
-          value="Update Quantity"
-        />
+          <input
+            onClick={updateQuantity}
+            className="bg-sky-600 hover:bg-sky-700 hover:text-white w-44 mx-auto p-2 mt-2 cursor-pointer"
+            type="submit"
+            value="Update Quantity"
+          />
+        </form>
       </div>
       <div className=" mt-12 max-w-max mx-auto flex justify-center">
         <div className="bg-white p-4 rounded shadow-2xl">

@@ -1,11 +1,13 @@
-import React, { useState } from "react";
-import { Link, useLocation, useNavigate } from "react-router-dom";
+import React, { useEffect, useState } from "react";
+import { useLocation, useNavigate } from "react-router-dom";
 import SocialLogIn from "../../Hooks/SocialLogIn/SocialLogIn";
 import {
   useSignInWithEmailAndPassword,
   useSendPasswordResetEmail,
 } from "react-firebase-hooks/auth";
 import auth from "../../firebase.init";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const LogIn = () => {
   const [signInWithEmailAndPassword, user, loading, error] =
@@ -21,6 +23,19 @@ const LogIn = () => {
     navigate(from, { replace: true });
   }
 
+  useEffect(() => {
+    if (error) {
+      toast("Invalid email", {
+        position: "top-center",
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+      });
+    }
+  }, [error]);
   const [email, setEmail] = useState({});
   const [password, setPassword] = useState({});
 
@@ -32,7 +47,6 @@ const LogIn = () => {
     const password = event.target.value;
     setPassword(password);
   };
-  console.log(email, password);
   const handleLogInButton = (event) => {
     event.preventDefault();
     signInWithEmailAndPassword(email, password);
@@ -80,7 +94,15 @@ const LogIn = () => {
           <button
             onClick={async () => {
               await sendPasswordResetEmail(email);
-              alert("Sent email");
+              toast("please check your email and reset your password", {
+                position: "top-center",
+                autoClose: 5000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: true,
+                draggable: true,
+                progress: undefined,
+              });
             }}
             className="flex justify-end m-4 text-blue-400 underline"
           >
@@ -94,6 +116,7 @@ const LogIn = () => {
           </button>
         </form>
       </div>
+      <ToastContainer />
     </div>
   );
 };

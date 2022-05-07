@@ -2,6 +2,8 @@ import React from "react";
 import { useAuthState } from "react-firebase-hooks/auth";
 import { useForm } from "react-hook-form";
 import auth from "../../firebase.init";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const AddNewItems = () => {
   const [user] = useAuthState(auth);
@@ -20,6 +22,15 @@ const AddNewItems = () => {
         console.log(product);
         if (product) {
           event.target.reset();
+          toast("Successfully added item", {
+            position: "top-center",
+            autoClose: 5000,
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: true,
+            progress: undefined,
+          });
         }
       });
   };
@@ -76,6 +87,7 @@ const AddNewItems = () => {
           type="submit"
         />
       </form>
+      <ToastContainer />
     </div>
   );
 };

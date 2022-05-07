@@ -2,7 +2,6 @@ import React, { useEffect, useState } from "react";
 import InventoryItem from "../InventoryItem/InventoryItem";
 
 const ManageInventory = () => {
-  // const [products] = AllData();
   const [products, setProducts] = useState([]);
   useEffect(() => {
     fetch("http://localhost:5000/home")
