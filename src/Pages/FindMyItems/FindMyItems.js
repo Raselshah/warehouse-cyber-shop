@@ -39,7 +39,7 @@ const FindMyItems = () => {
   };
 
   return (
-    <div className="grid sm:grid-cols-2 xs:grid-cols-1 md:grid-cols-3 lg:grid-cols-4 mt-12 w-5/6 mx-auto gap-10">
+    <div className="grid sm:grid-cols-2 xs:grid-cols-1 md:grid-cols-3 lg:grid-cols-4 mt-12 w-5/6 mx-auto gap-10 max-w-screen-xl">
       {userProducts.map((product) => (
         <FindMyItem
           key={product._id}

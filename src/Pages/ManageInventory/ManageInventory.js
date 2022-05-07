@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
 import InventoryItem from "../InventoryItem/InventoryItem";
 
 const ManageInventory = () => {
@@ -8,6 +9,8 @@ const ManageInventory = () => {
       .then((res) => res.json())
       .then((data) => setProducts(data));
   }, []);
+
+  const navigate = useNavigate();
 
   const handleProductDelete = (id) => {
     const confirmUser = window.confirm("Delete this item are you sure?");
@@ -26,26 +29,35 @@ const ManageInventory = () => {
   };
 
   return (
-    <div className="max-w-screen-lg mt-12 mx-auto flex">
-      <table className=" md:w-full mx-auto">
-        <tr className="border bg-slate-200">
-          <th>Product</th>
-          <th>Category</th>
-          <th>Price </th>
-          <th>Supplier </th>
-          <th>Quantity </th>
-          <th>Action </th>
-        </tr>
+    <>
+      <div className="max-w-screen-lg mt-12 mx-auto flex">
+        <table className=" md:w-full mx-auto">
+          <tr className="border bg-slate-200">
+            <th className="text-slate-600 p-4">Product</th>
+            <th className="text-slate-600 p-4">description</th>
+            <th className="text-slate-600 p-4">Category</th>
+            <th className="text-slate-600 p-4">Price </th>
+            <th className="text-slate-600 p-4">Supplier </th>
+            <th className="text-slate-600 p-4">Quantity </th>
+            <th className="text-slate-600 p-4">Action </th>
+          </tr>
 
-        {products.map((product) => (
-          <InventoryItem
-            key={product._id}
-            handleProductDelete={handleProductDelete}
-            product={product}
-          ></InventoryItem>
-        ))}
-      </table>
-    </div>
+          {products.map((product) => (
+            <InventoryItem
+              key={product._id}
+              handleProductDelete={handleProductDelete}
+              product={product}
+            ></InventoryItem>
+          ))}
+        </table>
+      </div>
+      <button
+        onClick={() => navigate("/add")}
+        className="flex justify-center w-60 mx-auto px-12 py-2 mt-12 hover:bg-sky-700 hover:text-white text-gray-300 bg-white"
+      >
+        ADD NEW ITEMS
+      </button>
+    </>
   );
 };
 
