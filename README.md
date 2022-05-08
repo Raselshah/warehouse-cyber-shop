@@ -12,6 +12,8 @@
 
 ## the technology use this project
 
+## user sign up first then manage items display now
+
 ### JSX,JS,tailwind,firebase,ReactJS,NodeJS,MongoDB,heroku server,toastify or other technology
 
 ### Live Site Link

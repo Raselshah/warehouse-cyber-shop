@@ -54,7 +54,7 @@ const Footer = () => {
         </div>
         <div className="section-three mt-12 text-white">
           <h2>NEWLETTERS</h2>
-          <div className="flex justify-center items-center mt-4 h-18">
+          <div className="block justify-center items-center mt-4 h-18 sm:flex">
             <input
               className="p-3 rounded"
               type="email"
@@ -62,7 +62,7 @@ const Footer = () => {
               placeholder="ENTER YOUR EMAIL ADDRESS"
               id=""
             />
-            <button className="text-white p-3 rounded bg-orange-500 mx-2">
+            <button className="text-white p-3 rounded bg-orange-500 mx-2 mt-2 sm:mt-0">
               SUBSCRIBE
             </button>
           </div>

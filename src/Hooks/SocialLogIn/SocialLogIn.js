@@ -1,9 +1,11 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { useSignInWithGoogle } from "react-firebase-hooks/auth";
 import { AiFillGoogleCircle } from "react-icons/ai";
 import { BsGithub } from "react-icons/bs";
 import { useNavigate } from "react-router-dom";
 import auth from "../../firebase.init";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const SocialLogIn = () => {
   const [signInWithGoogle, googleUser, loading, error] =
@@ -13,6 +15,20 @@ const SocialLogIn = () => {
   if (googleUser) {
     navigate("/");
   }
+
+  useEffect(() => {
+    if (error) {
+      toast("Opps! try again", {
+        position: "top-center",
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+      });
+    }
+  }, [error]);
 
   return (
     <>
@@ -39,6 +55,7 @@ const SocialLogIn = () => {
         <p className="mx-4">Or</p>
         <div className="bg-gray-300 w-full h-1"></div>
       </div>
+      <ToastContainer />
     </>
   );
 };

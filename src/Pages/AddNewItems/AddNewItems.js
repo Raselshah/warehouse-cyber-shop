@@ -35,7 +35,7 @@ const AddNewItems = () => {
       });
   };
   return (
-    <div className="text-center mt-12">
+    <div className="text-center mt-12 h-[100vh]">
       <h2>Please enter your new products</h2>
       <form className="mt-4" onSubmit={handleSubmit(onSubmit)}>
         <input
