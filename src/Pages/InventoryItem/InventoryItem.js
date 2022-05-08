@@ -3,8 +3,16 @@ import { TiDeleteOutline } from "react-icons/ti";
 import { MdUpdate } from "react-icons/md";
 import { useNavigate } from "react-router-dom";
 const InventoryItem = ({ product, handleProductDelete }) => {
-  const { _id, price, picture, supplierName, description, quantity, category } =
-    product;
+  const {
+    _id,
+    price,
+    picture,
+    supplierName,
+    productName,
+    description,
+    quantity,
+    category,
+  } = product;
 
   const navigate = useNavigate();
 
@@ -13,11 +21,11 @@ const InventoryItem = ({ product, handleProductDelete }) => {
       <tr className="border bg-slate-50 text-center">
         <td className="px-4 mr-6 flex items-center">
           <img className="w-16 rounded m-2" src={picture} alt="" />
-          <h2 className="text-gray-500">{supplierName}</h2>
+          <h2 className="text-gray-500">{productName}</h2>
         </td>
         <td className="p-4 text-gray-600">{description}</td>
         <td className="p-4 text-gray-600">{category}</td>
-        <td className="px-4 text-gray-600">${price}</td>
+        <td className="px-4 text-gray-600">Price : ${price}</td>
         <td className="px-4 text-gray-600">{supplierName}</td>
         <td className="px-4">{quantity}</td>
         <td className="px-4 flex">

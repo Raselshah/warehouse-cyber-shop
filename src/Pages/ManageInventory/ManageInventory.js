@@ -31,7 +31,7 @@ const ManageInventory = () => {
   return (
     <>
       <div className="max-w-screen-lg mt-12 mx-auto flex">
-        <table className=" md:w-full mx-auto">
+        <table className="md:w-full mx-auto">
           <tr className="border bg-slate-200">
             <th className="text-slate-600 p-4">Product</th>
             <th className="text-slate-600 p-4">description</th>

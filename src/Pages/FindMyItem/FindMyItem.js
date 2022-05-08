@@ -18,7 +18,7 @@ const FindMyItem = ({ product, handleProductDelete }) => {
         <h2>{productName}</h2>
         <h2>supplier : {supplierName}</h2>
         <p>{description}</p>
-        <p>${price}</p>
+        <p>Price : ${price}</p>
         <p>Available : {quantity}</p>
         <button
           onClick={() => handleProductDelete(_id)}
